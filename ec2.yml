@@ -11,7 +11,11 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0 # Allows SSH from anywhere (consider restricting this in production)
-          
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0 # Allows SSH from anywhere (consider restricting this in production)
+         
   MyEC2Instance:
     Type: AWS::EC2::Instance
     Properties:
@@ -22,4 +26,4 @@ Resources:
         - !GetAtt MySecurityGroup.GroupId # Reference the Security Group created above
       Tags:
         - Key: Name
-          Value: 2pm-instance
+          Value: croma-cicid-project
