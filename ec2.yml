@@ -8,8 +8,8 @@ Resources:
       GroupDescription: port enable
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
+          FromPort: 3389
+          ToPort: 3389
           CidrIp: 0.0.0.0/0 # Allows SSH from anywhere (consider restricting this in production)
         - IpProtocol: tcp
           FromPort: 80
